@@ -4,7 +4,7 @@ from pathlib import Path
 
 router = APIRouter()
 
-csv_path = Path(__file__).resolve().parent.parent / "public" / "data" / "books.csv"
+csv_path = Path(__file__).resolve().parent.parent / "api" / "data" / "books.csv"
 df_books = pd.read_csv(csv_path, encoding="utf-8")
 
 # Lista titulo de todos os livros
