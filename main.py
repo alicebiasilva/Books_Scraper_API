@@ -1,5 +1,5 @@
-from tech_challenge.api.routes import router
-from tech_challenge.api.config import Config
+from api.routes import router
+from api.config import Config
 from fastapi import FastAPI
 
 app = FastAPI(

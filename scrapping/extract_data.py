@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+import re
 
 BASE_URL = "https://books.toscrape.com/"
 
@@ -34,6 +35,7 @@ def parse_books_from_page(html: str, category_name: str) -> list[dict]:
     for book in soup.select("article.product_pod"):
         title = book.h3.a["title"]
         price = book.select_one(".price_color").text
+        price = re.sub(r"[^\d.]", "", price)
         availability = book.select_one(".availability").text.strip()
         rating_class = book.p["class"]
         rating = rating_class[1] if len(rating_class) > 1 else "None"
@@ -55,7 +57,7 @@ def parse_books_from_page(html: str, category_name: str) -> list[dict]:
     return books
 
 def scrape_all_books() -> list[dict]:
-    """Percorre todas as categorias e páginas e retorna todos os livros."""
+    """Percorre todas as categorias e páginas e retorna todos os livros, incluindo uma coluna ID única."""
     categories_html = fetch_page(BASE_URL)
     soup = BeautifulSoup(categories_html, "html.parser")
     categories = {
@@ -64,12 +66,20 @@ def scrape_all_books() -> list[dict]:
     }
 
     all_books = []
+    current_id = 1  # contador para o ID único
+
     for name, url in categories.items():
         print(f"Coletando livros da categoria: {name}")
         page_url = url
         while True:
             html = fetch_page(page_url)
             books = parse_books_from_page(html, name)
+
+            # Adiciona o ID sequencial em cada livro
+            for book in books:
+                book['id'] = current_id
+                current_id += 1
+
             all_books.extend(books)
 
             next_page = BeautifulSoup(html, "html.parser").select_one("li.next a")
@@ -79,3 +89,4 @@ def scrape_all_books() -> list[dict]:
                 break
 
     return all_books
+
