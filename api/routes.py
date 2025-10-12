@@ -48,37 +48,32 @@ def search_books(title: str | None = Query(None), category: str | None = Query(N
 
 
 
-# Busca livros por título e/ou categoria
-@router.get("/books/search?title={title}&category={category}", tags=["Categorias"])
+#Lista detalhes dos livros por titulo e/ou categoria
+@router.get("/books/search", tags=["Categorias"])
 def search_books(title: str | None = Query(None), category: str | None = Query(None)):
     """
     Busca livros filtrando por título e/ou categoria.
 
-    Parâmetros de consulta (query parameters):
-        title (str, opcional): Texto para busca parcial no título do livro. A busca é case-insensitive.
-        category (str, opcional): Texto para busca parcial na categoria do livro. A busca é case-insensitive.
+    Parâmetros de consulta:
+        - title (str, opcional): Parte do título do livro (case-insensitive).
+        - category (str, opcional): Parte do nome da categoria (case-insensitive).
 
     Retorna:
-        list[dict]: Lista de livros que correspondem aos filtros aplicados. Cada livro é representado por um dicionário com todas as suas informações.
-
-    Se nenhum filtro for fornecido, retorna todos os livros disponíveis.
+        Lista de dicionários com os livros encontrados. Se nenhum livro for encontrado,
+        retorna HTTP 404.
     """
     result = df_books
 
-    title = df_books[df_books["title"] == title] 
-    category = df_books[df_books["category"] == category]
-    if title.empty:
-        if category.empty: 
-            raise HTTPException(status_code=404, detail="Livro não encontrado")
-    else
-        return category.to_dict(orient="records")
-    
-    if category.empty:
-        if title.empty:
-            raise HTTPException(status_code=404, detail="Livro não encontrado")
-    else
-        return title.to_dict(orient:"records")
-    else return result.to_dict(orient="records")
+    if title:
+        result = result[result["title"].str.contains(title, case=False, na=False)]
+
+    if category:
+        result = result[result["category"].str.contains(category, case=False, na=False)]
+
+    if result.empty:
+        raise HTTPException(status_code=404, detail="Nenhum livro encontrado com os critérios fornecidos.")
+
+    return result.to_dict(orient="records")
 
 # Lista todas as categorias
 @router.get("/categories", tags=["Categorias"])
