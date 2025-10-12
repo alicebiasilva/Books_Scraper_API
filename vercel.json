@@ -10,8 +10,5 @@
       "src": "/(.*)",
       "dest": "main.py"
     }
-  ],
-  "includeFiles": [
-    "public/data/books.csv"
   ]
 }
