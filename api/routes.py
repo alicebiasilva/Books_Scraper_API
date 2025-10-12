@@ -13,9 +13,6 @@ def get_books():
     """
     Retorna uma lista com os títulos de todos os livros disponíveis.
 
-    Esta rota retorna apenas os nomes (títulos) dos livros,
-    extraídos do DataFrame 'df_books'.
-
     Retorno:
         list[str]: Lista contendo os títulos dos livros.
     """
@@ -23,28 +20,36 @@ def get_books():
 
 
 # Detalhes de um livro pelo ID
-@router.get("/books/{book_id}", tags=["Livros"])
-def get_book(book_id: int):
+@router.get("/books/search", tags=["Categorias"])
+def search_books(title: str | None = Query(None), category: str | None = Query(None)):
     """
-    Retorna os detalhes completos de um livro pelo seu ID.
+    Busca livros filtrando por título e/ou categoria.
 
-    Argumentos:
-        book_id (int): Identificador único do livro.
+    Parâmetros de consulta:
+        - title (str, opcional): Parte do título do livro (case-insensitive).
+        - category (str, opcional): Parte do nome da categoria (case-insensitive).
 
-    Retorno:
-        dict: Um dicionário com todas as informações do livro correspondente ao ID fornecido.
-
-    Exceções:
-        HTTPException 404: Se nenhum livro com o ID informado for encontrado.
+    Retorna:
+        Lista de dicionários com os livros encontrados. Se nenhum livro for encontrado,
+        retorna HTTP 404.
     """
-    book = df_books[df_books["id"] == book_id]
-    if book.empty:
-        raise HTTPException(status_code=404, detail="Livro não encontrado")
-    return book.to_dict(orient="records")[0]
+    result = df_books
+
+    if title:
+        result = result[result["title"].str.contains(title, case=False, na=False)]
+
+    if category:
+        result = result[result["category"].str.contains(category, case=False, na=False)]
+
+    if result.empty:
+        raise HTTPException(status_code=404, detail="Nenhum livro encontrado com os critérios fornecidos.")
+
+    return result.to_dict(orient="records")
+
 
 
 # Busca livros por título e/ou categoria
-@router.get("/books/search", tags=["Categorias"])
+@router.get("/books/search?title={title}&category={category}", tags=["Categorias"])
 def search_books(title: str | None = Query(None), category: str | None = Query(None)):
     """
     Busca livros filtrando por título e/ou categoria.
@@ -59,11 +64,21 @@ def search_books(title: str | None = Query(None), category: str | None = Query(N
     Se nenhum filtro for fornecido, retorna todos os livros disponíveis.
     """
     result = df_books
-    if title:
-        result = result[result["title"].str.contains(title, case=False, na=False)]
-    if category:
-        result = result[result["category"].str.contains(category, case=False, na=False)]
-    return result.to_dict(orient="records")
+
+    title = df_books[df_books["title"] == title] 
+    category = df_books[df_books["category"] == category]
+    if title.empty:
+        if category.empty: 
+            raise HTTPException(status_code=404, detail="Livro não encontrado")
+    else
+        return category.to_dict(orient="records")
+    
+    if category.empty:
+        if title.empty:
+            raise HTTPException(status_code=404, detail="Livro não encontrado")
+    else
+        return title.to_dict(orient:"records")
+    else return result.to_dict(orient="records")
 
 # Lista todas as categorias
 @router.get("/categories", tags=["Categorias"])
