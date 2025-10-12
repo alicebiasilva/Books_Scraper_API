@@ -5,10 +5,9 @@ import os
 
 router = APIRouter()
 
-csv_path = Path(__file__).resolve().parents[2] / "public" / "data" / "books.csv"
+base_dir = Path(__file__).resolve().parents[2]
+csv_path = base_dir / "public" / "data" / "books.csv"
 df_books = pd.read_csv(csv_path, encoding="utf-8")
-
-
 
 # Lista titulo de todos os livros
 @router.get("/books", tags=["Livros"])
@@ -93,16 +92,12 @@ def health():
     
     Levanta HTTPException 503 se o arquivo CSV não estiver acessível ou inválido.
     """
-    csv_path = "public/data/books.csv"
-    
-    # Verifica se o arquivo existe
-    if not os.path.isfile(csv_path):
+    if not csv_path.is_file():
         raise HTTPException(status_code=503, detail="Base de dados não encontrada")
-    
-    # Tenta carregar o CSV para garantir que está legível
+
     try:
         pd.read_csv(csv_path)
     except Exception as e:
         raise HTTPException(status_code=503, detail=f"Erro ao ler base de dados: {str(e)}")
-    
+
     return {"status": "ok"}
