@@ -6,8 +6,7 @@ import os
 router = APIRouter()
 
 # Carrega os dados do CSV ao iniciar a API
-BASE_DIR = Path(__file__).resolve().parent
-df_books = pd.read_csv(BASE_DIR / "data" / "books.csv")
+df_books = pd.read_csv("D:/FIAP/Engenharia de Machine Learning/Fase 1/Projeto1/public/data/books.csv")
 df_books["id"] = df_books.index + 1
 
 
