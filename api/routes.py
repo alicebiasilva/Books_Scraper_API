@@ -23,8 +23,6 @@ def get_books():
 
 
 # Detalhes de um livro pelo ID
-from fastapi import HTTPException
-
 @router.get("/books/{book_id}", tags=["Livros"])
 def get_book(book_id: int):
     """
