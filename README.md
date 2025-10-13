@@ -14,7 +14,7 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 ## Índice
 
-- [📚 Funcionalidades](#Funcionalidades)  
+- [📚 Funcionalidades](#funcionalidades)  
 - [⚙️ Tecnologias](#Tecnologias)  
 - [💻 Estrutura do projeto](#estrutura-do-projeto)  
 - [🛠️ Instalação e Configuração](#instalacao-e-configuracao)  
