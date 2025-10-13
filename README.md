@@ -148,9 +148,12 @@ Buscar por título e/ou categoria juntos:
 ]
 ```
 
-* `GET /health`:Valida saúde da API, ou seja, se as informações estão disponíveis:
+### `GET /health`:
+
+Valida saúde da API, ou seja, se as informações estão disponíveis:
 ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/health
+  
   ```
 ### Resposta
 
