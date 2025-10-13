@@ -3,21 +3,13 @@
 ---
 
 API robusta e eficiente para coleta, armazenamento e consulta de dados de livros do site "Books to Scrape" (https://books.toscrape.com/), projetada para garantir alta disponibilidade e segurança, potencializando seus projetos de ciência de dados com informações precisas e atualizadas. 
+
 Autora: Alice Beatriz da Silva
+
 Última atualização: 12/10/2025
 
 Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
-### Por que este projeto é ideal para cientistas de dados?
-
-Este projeto facilita o trabalho repetitivo e burocrático da coleta e organização dos dados, permitindo que você foque no que realmente importa: gerar insights e construir modelos preditivos de alta qualidade.
-
-- **Automatiza a coleta de dados**: raspagem eficiente e estruturada do site "Books to Scrape" (https://books.toscrape.com/), eliminando o trabalho manual e economizando tempo.
-- **Armazenamento organizado**: dados salvos em formato CSV padrão, facilitando integração com ferramentas de análise e modelagem.
-- **Consulta rápida e flexível**: API REST permite filtrar livros por título, categoria, ou ambos, agilizando a extração dos dados relevantes para suas análises.
-- **Imagens acessíveis**: capas dos livros são baixadas e disponibilizadas via URL pública, enriquecendo dashboards e relatórios visuais.
-- **Design escalável e seguro**: pensado para suportar aumento de volume e garantir a integridade dos dados, essencial para projetos que crescem com o tempo.
-- **Fácil integração**: pode ser incorporado facilmente em pipelines de ciência de dados, machine learning e visualização, reduzindo barreiras técnicas.
 ---
 
 ## Índice
@@ -30,17 +22,20 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 
 ---
 
-## Funcionalidades
+## 📚 Funcionalidades
 
-- Scraping de todas as informações disponíveis sobre os livros: título, preço, rating, disponibilidade, categoria, imagem.
-- API REST para consulta dos livros por:
-  - ID
-  - Título
-  - Categoria
-  - Busca combinada por título e categoria
-  - Consulta da disponibilização da API
+### Por que este projeto é ideal para cientistas de dados?
 
-### 📚 Endpoints da API
+Este projeto facilita o trabalho repetitivo e burocrático da coleta e organização dos dados, permitindo que você foque no que realmente importa: gerar insights e construir modelos preditivos de alta qualidade.
+
+- **Automatiza a coleta de dados**: raspagem eficiente e estruturada do site "Books to Scrape" (https://books.toscrape.com/), eliminando o trabalho manual e economizando tempo.
+- **Armazenamento organizado**: dados salvos em formato CSV padrão, facilitando integração com ferramentas de análise e modelagem.
+- **Consulta rápida e flexível**: API REST permite filtrar livros por título, categoria, ou ambos, agilizando a extração dos dados relevantes para suas análises.
+- **Imagens acessíveis**: capas dos livros são baixadas e disponibilizadas via URL pública, enriquecendo dashboards e relatórios visuais.
+- **Design escalável e seguro**: pensado para suportar aumento de volume e garantir a integridade dos dados, essencial para projetos que crescem com o tempo.
+- **Fácil integração**: pode ser incorporado facilmente em pipelines de ciência de dados, machine learning e visualização, reduzindo barreiras técnicas.
+
+### Endpoints da API
 
 | Método | Rota               | Descrição                                                              |
 | ------ | ------------------ | ---------------------------------------------------------------------- |
@@ -50,46 +45,51 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 | `GET`  | `/categories`      | Lista todas as categorias únicas disponíveis.                          |
 | `GET`  | `/health`          | Verifica o status da API e da base de dados (útil para monitoramento). |
 
----
 
-#### 🔍 Exemplos de uso
+### Exemplos de uso
 
-* Buscar por título:
-
-  ```
-  /books/search?title=Hunger
-  ```
-
-* Buscar por categoria:
+* Lista todos os títulos:
 
   ```
-  /books/search?category=Science
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books
   ```
 
-* Buscar por título e categoria juntos:
+* Lista todas as categorias:
 
   ```
-  /books/search?title=Hunger&category=Science
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/categories
   ```
 
-Claro! Aqui estão **exemplos de chamadas `request` e suas respectivas `responses`** para cada rota da sua API. Isso é ótimo para ajudar quem for consumir a API a entender rapidamente como ela funciona.
+* Busca por ID (exemplo ID = 1):
+```
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/1
+  ```
 
----
+* Buscar por título e/ou categoria juntos:
 
-## 📬 Exemplos de Requisições e Respostas
+  ```
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/search?category=Travel
+  ```
+
+* Valida saúde da API, ou seja, se as informações estão disponíveis:
+```
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/health
+  ```
+
+#### Exemplos de Requisições e Respostas
 
 ### 🔹 `GET /books`
 
 **Descrição:** Retorna uma lista com os títulos de todos os livros.
 
-#### ✅ Exemplo de Requisição
+#### Exemplo de Requisição
 
 ```http
 GET /books HTTP/1.1
 Host: sua-api.vercel.app
 ```
 
-#### 📦 Resposta
+#### Resposta
 
 ```json
 [
@@ -108,14 +108,14 @@ Host: sua-api.vercel.app
 
 **Descrição:** Retorna os detalhes completos de um livro pelo seu ID.
 
-#### ✅ Exemplo de Requisição
+#### Exemplo de Requisição
 
 ```http
 GET /books/1 HTTP/1.1
 Host: sua-api.vercel.app
 ```
 
-#### 📦 Resposta
+#### Resposta
 
 ```json
 {
@@ -135,14 +135,14 @@ Host: sua-api.vercel.app
 
 **Descrição:** Busca livros por título, categoria ou ambos.
 
-#### ✅ Exemplo de Requisição (por título e categoria)
+#### Exemplo de Requisição (por título e categoria)
 
 ```http
 GET /books/search?title=himalayas&category=Travel HTTP/1.1
 Host: sua-api.vercel.app
 ```
 
-#### 📦 Resposta
+#### Resposta
 
 ```json
 [
@@ -164,14 +164,14 @@ Host: sua-api.vercel.app
 
 **Descrição:** Retorna todas as categorias disponíveis.
 
-#### ✅ Exemplo de Requisição
+#### Exemplo de Requisição
 
 ```http
 GET /categories HTTP/1.1
 Host: sua-api.vercel.app
 ```
 
-#### 📦 Resposta
+#### Resposta
 
 ```json
 {
@@ -192,14 +192,14 @@ Host: sua-api.vercel.app
 
 **Descrição:** Verifica se a API e o arquivo de dados estão funcionando corretamente.
 
-#### ✅ Exemplo de Requisição
+#### Exemplo de Requisição
 
 ```http
 GET /health HTTP/1.1
 Host: sua-api.vercel.app
 ```
 
-#### 📦 Resposta
+#### Resposta
 
 ```json
 {
@@ -209,7 +209,7 @@ Host: sua-api.vercel.app
 
 ---
 
-## Tecnologias
+## ⚙️ Tecnologias
 
 ### Bibliotecas e Ferramentas de Desenvolvimento
 - **FastAPI** – Framework para construir APIs rápidas e escaláveis.
@@ -246,23 +246,26 @@ Essa separação clara e modular facilita o desenvolvimento colaborativo, o test
 
 .
 ├── api
-│   ├── data   
-│       └── books.csv          # Arquivo CSV contendo os dados coletados dos livros
-│   ├── routes.py              # Definição das rotas da API para consulta dos dados
-│   ├── config.py              # Configurações gerais da aplicação (ex: chave secreta, cache)
-│   └── __init__.py            # Torna a pasta um pacote Python
+│   ├── data
+│   │   └── books.csv           # Arquivo CSV contendo os dados coletados dos livros
+│   ├── routes.py               # Definição das rotas da API para consulta dos dados
+│   ├── config.py               # Configurações gerais da aplicação (ex: chave secreta, cache)
+│   └── __init__.py             # Torna a pasta um pacote Python
+
 ├── public
-│   └── images                 # Diretório onde as imagens dos livros são armazenadas após o download
+│   └── images                  # Diretório onde as imagens dos livros são armazenadas após o download
+
 ├── scrapping
-│   ├── extract_data.py        # Funções responsáveis pelo scraping dos dados do site
-│   ├── load_data.py           # Funções para salvar os dados coletados em CSV
-│   ├── scrape_and_save.py     # Script que integra scraping e armazenamento dos dados
-│   └── __init__.py            # Torna a pasta um pacote Python
-├── main.py                    # Script principal que inicia o scraping e roda a API
-├── requirements.txt           # Lista das dependências Python necessárias para o projeto
-├── vercel.json                # Configurações para deploy no Vercel
-├── .gitignore                 # Arquivos e pastas ignorados pelo Git
-└── README.md                  # Documentação do projeto
+│   ├── extract_data.py         # Funções responsáveis pelo scraping dos dados do site
+│   ├── load_data.py            # Funções para salvar os dados coletados em CSV
+│   ├── scrape_and_save.py      # Script que integra scraping e armazenamento dos dados
+│   └── __init__.py             # Torna a pasta um pacote Python
+
+├── main.py                     # Script principal que inicia o scraping e roda a API
+├── requirements.txt            # Lista das dependências Python necessárias para o projeto
+├── vercel.json                 # Configurações para deploy no Vercel
+├── .gitignore                  # Arquivos e pastas ignorados pelo Git
+└── README.md                   # Documentação do projeto
 
 
 ## 🛠️ Instalação e Configuração
@@ -320,4 +323,45 @@ http://127.0.0.1:8000/docs
 
 ---
 
+## 🚀 Escalabilidade
 
+### Próximos passos
+
+Entendemos que a construção de produtos robustos deve ser feita de forma contínua, colaborativa e centrada no usuário. Por isso, esta é a **primeira versão** do projeto — totalmente funcional, mas com espaço para melhorias e evolução.
+
+Estamos abertos a feedbacks e já mapeamos algumas melhorias para as próximas entregas:
+
+#### Automatização e Atualização
+
+* **Definir frequência de atualização dos dados**, por exemplo via agendamento com `cron`, GitHub Actions ou cloud functions (AWS Lambda, Google Cloud Functions).
+* **Agendar o scraping periodicamente**, garantindo que os dados estejam sempre atualizados.
+
+#### Containerização com Docker
+
+* Criar um `Dockerfile` e um `docker-compose.yml` para facilitar o deploy local e em produção.
+* Padronizar ambientes para desenvolvedores e garantir portabilidade entre máquinas.
+
+#### Banco de Dados em Nuvem
+
+* Integrar a persistência dos dados com um **banco de dados relacional** (PostgreSQL, MySQL) ou **NoSQL** (MongoDB), hospedado em plataformas como:
+
+  * Railway
+  * PlanetScale
+  * Supabase
+  * Firebase
+* Isso permitirá maior escalabilidade, consultas mais complexas e integração com dashboards.
+
+#### Painéis e Visualização
+
+* Criar um **dashboard interativo** (ex: Streamlit, Dash ou Power BI conectado via API) para visualização rápida dos livros, categorias e preços.
+* Integrar com ferramentas de visual analytics para insights mais profundos.
+
+#### Testes Automatizados
+
+* Criar **testes unitários e de integração** com `pytest`.
+* Configurar CI/CD no GitHub para rodar os testes automaticamente a cada push.
+
+#### Versionamento Semântico
+
+* Adotar **versionamento semântico** (`semver`) para releases (`v1.0.0`, `v1.1.0` etc).
+* Manter changelog atualizado no GitHub.
