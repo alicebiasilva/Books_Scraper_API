@@ -17,7 +17,7 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 - [Funcionalidades](#funcionalidades)  
 - [Tecnologias](#tecnologias)  
 - [Estrutura do projeto](#estrutura-do-projeto)  
-- [Instalação e Configuração](#instalacao-e-configuracao)
+- [Instalacao e Configuracao](#instalacao-e-configuracao)
 - [Escalabilidade](#escalabilidade)
 
 ---
@@ -190,7 +190,7 @@ Essa separação clara e modular facilita o desenvolvimento colaborativo, o test
 
 
 
-## Instalação e Configuração
+## Instalacao e Configuracao
 
 Siga os passos abaixo para clonar, configurar e rodar o projeto localmente:
 
