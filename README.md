@@ -136,7 +136,7 @@ Buscar por título e/ou categoria juntos:
 
 ---
 
-## 🗺️ Arquitetura do Pipeline de Dados
+## Arquitetura do Pipeline de Dados
 
 O diagrama abaixo mostra o fluxo completo de dados — da coleta à entrega — usado neste projeto. Ele ajuda a entender como o sistema foi organizado para permitir extração automatizada, disponibilização via API e uso eficiente pelos times de análise e machine learning.
 
