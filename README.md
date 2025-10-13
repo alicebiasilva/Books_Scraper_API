@@ -22,7 +22,7 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 ---
 
-## 📚 Funcionalidades {#funcionalidades}
+## Funcionalidades
 
 ### Por que este projeto é ideal para cientistas de dados?
 
@@ -135,7 +135,7 @@ Buscar por título e/ou categoria juntos:
 
 ---
 
-## ⚙️ Tecnologias {#tecnologias}
+## Tecnologias
 
 ### Bibliotecas e Ferramentas de Desenvolvimento
 - **FastAPI** – Framework para construir APIs rápidas e escaláveis.
@@ -190,7 +190,7 @@ Essa separação clara e modular facilita o desenvolvimento colaborativo, o test
 
 
 
-## 🛠️ Instalação e Configuração {#instalacao-e-configuracao}
+## Instalação e Configuração
 
 Siga os passos abaixo para clonar, configurar e rodar o projeto localmente:
 
@@ -245,7 +245,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## 🚀 Escalabilidade {#escalabilidade}
+## Escalabilidade
 
 ### Próximos passos
 
