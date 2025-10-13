@@ -14,16 +14,15 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 ## Índice
 
-- [Funcionalidades](#funcionalidades)  
-- [Arquitetura do Pipeline de Dados](#arquitetura-do-pipeline-de-dados)
-- [Tecnologias](#tecnologias)  
+- [Funcionalidades e exemplo de uso](#funcionalidades-e-exemplos-de-uso)  
 - [Estrutura do projeto](#estrutura-do-projeto)  
+- [Tecnologias](#tecnologias)  
 - [Instalacao e Configuracao](#instalacao-e-configuracao)
 - [Escalabilidade](#escalabilidade)
 
 ---
 
-## Funcionalidades
+## Funcionalidades e exemplo de uso
 
 ### Por que este projeto é ideal para cientistas de dados?
 
@@ -35,6 +34,13 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 - **Imagens acessíveis**: capas dos livros são baixadas e disponibilizadas via URL pública, enriquecendo dashboards e relatórios visuais.
 - **Design escalável e seguro**: pensado para suportar aumento de volume e garantir a integridade dos dados, essencial para projetos que crescem com o tempo.
 - **Fácil integração**: pode ser incorporado facilmente em pipelines de ciência de dados, machine learning e visualização, reduzindo barreiras técnicas.
+
+### Arquitetura do Pipeline de Dados
+
+O diagrama abaixo mostra o fluxo completo de dados — da coleta à entrega — usado neste projeto. Ele ajuda a entender como o sistema foi organizado para permitir extração automatizada, disponibilização via API e uso eficiente pelos times de análise e machine learning.
+
+![Arquitetura do Pipeline](public/drawio/arquitetura_pipeline_dados.png)
+
 
 ### Endpoints da API
 
@@ -153,7 +159,7 @@ Buscar por título e/ou categoria juntos:
 Valida saúde da API, ou seja, se as informações estão disponíveis:
 ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/health
-  
+
   ```
 ### Resposta
 
@@ -162,40 +168,6 @@ Valida saúde da API, ou seja, se as informações estão disponíveis:
   "status": "ok"
 }
 ```
-
----
-
-## Arquitetura do Pipeline de Dados
-
-O diagrama abaixo mostra o fluxo completo de dados — da coleta à entrega — usado neste projeto. Ele ajuda a entender como o sistema foi organizado para permitir extração automatizada, disponibilização via API e uso eficiente pelos times de análise e machine learning.
-
-![Arquitetura do Pipeline](public/drawio/arquitetura_pipeline_dados.png)
-
----
-
-## Tecnologias
-
-### Bibliotecas e Ferramentas de Desenvolvimento
-- **FastAPI** – Framework para construir APIs rápidas e escaláveis.
-- **Pandas** – Manipulação e análise de dados.
-- **BeautifulSoup** – Raspagem e parsing de HTML.
-- **Requests** – Requisições HTTP simples e elegantes.
-- **Black** – Formatador de código Python para manter a consistência e qualidade do código.
-
-### Tecnologias de Deploy e Versionamento
-- **Vercel** – Plataforma para deploy e hospedagem rápida da API em produção.
-- **GitHub** – Controle de versão e hospedagem do código-fonte.
-
-### Destaques do Projeto
-
-- **Código Modularizado:** O projeto é estruturado em módulos claros e organizados, facilitando manutenção e escalabilidade.
-- **Código Limpo e Padronizado:** Uso do Black para garantir consistência e legibilidade do código.
-- **Documentação Completa:** Todas as funções e classes possuem docstrings detalhadas, e o código está amplamente comentado para facilitar o entendimento.
-- **API Bem Estruturada:** Endpoints claros e intuitivos para consulta eficiente dos dados coletados.
-- **Frontend acessível** – Desenvolvido para facilitar o acesso e a interação com a API, proporcionando uma experiência amigável para os usuários.
-- **Pronto para Produção:** Deploy simplificado via Vercel, garantindo alta disponibilidade e performance.
-
----
  
 ## Estrutura do projeto
 
@@ -226,7 +198,31 @@ Essa separação clara e modular facilita o desenvolvimento colaborativo, o test
 | `.gitignore`                   | Arquivos e pastas ignorados pelo Git                                     |
 | `README.md`                    | Documentação do projeto                                                  |
 
+---
 
+## Tecnologias
+
+### Bibliotecas e Ferramentas de Desenvolvimento
+- **FastAPI** – Framework para construir APIs rápidas e escaláveis.
+- **Pandas** – Manipulação e análise de dados.
+- **BeautifulSoup** – Raspagem e parsing de HTML.
+- **Requests** – Requisições HTTP simples e elegantes.
+- **Black** – Formatador de código Python para manter a consistência e qualidade do código.
+
+### Tecnologias de Deploy e Versionamento
+- **Vercel** – Plataforma para deploy e hospedagem rápida da API em produção.
+- **GitHub** – Controle de versão e hospedagem do código-fonte.
+
+### Destaques do Projeto
+
+- **Código Modularizado:** O projeto é estruturado em módulos claros e organizados, facilitando manutenção e escalabilidade.
+- **Código Limpo e Padronizado:** Uso do Black para garantir consistência e legibilidade do código.
+- **Documentação Completa:** Todas as funções e classes possuem docstrings detalhadas, e o código está amplamente comentado para facilitar o entendimento.
+- **API Bem Estruturada:** Endpoints claros e intuitivos para consulta eficiente dos dados coletados.
+- **Frontend acessível** – Desenvolvido para facilitar o acesso e a interação com a API, proporcionando uma experiência amigável para os usuários.
+- **Pronto para Produção:** Deploy simplificado via Vercel, garantindo alta disponibilidade e performance.
+
+---
 
 ## Instalacao e Configuracao
 
