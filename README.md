@@ -14,11 +14,11 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 ## Índice
 
-- [Funcionalidades](#Funcionalidades)  
-- [Tecnologias](#Tecnologias)  
-- [Estrutura do projeto](#estrutura-do-projeto)  
-- [Instalação e configuração](#instalacao-e-configuracao)  
-- [Escalabilidade](#escalabilidade)  
+- [📚 Funcionalidades](#Funcionalidades)  
+- [⚙️ Tecnologias](#Tecnologias)  
+- [💻 Estrutura do projeto](#estrutura-do-projeto)  
+- [🛠️ Instalação e Configuração](#instalacao-e-configuracao)  
+- [🚀 Escalabilidade](#escalabilidade)  
 
 ---
 
@@ -48,7 +48,9 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 
 ### Exemplos de uso
 
-* `GET /books`: lista todos os títulos disponíveis.
+## `GET /books`: 
+
+Lista todos os títulos disponíveis.
 
   ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books
@@ -68,7 +70,9 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 ]
 ```
 
-* `GET /books/{book_id}`: busca todas as informações de um livro por ID (exemplo ID = 1).
+## `GET /books/{book_id}`: 
+
+Busca todas as informações de um livro por ID (exemplo ID = 1).
 
   ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/1
@@ -88,7 +92,9 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 }
 ```
 
-* `GET /books/categories`: lista todas as categorias disponíveis.
+## `GET /books/categories`: 
+
+Lista todas as categorias disponíveis.
 ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/categories
   ```
@@ -107,7 +113,9 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 }
 ```
 
-* `GET /books/search`: Buscar por título e/ou categoria juntos:
+## `GET /books/search`: 
+
+Buscar por título e/ou categoria juntos:
 
   ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/search?category=Travel
@@ -151,7 +159,7 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 
 ---
  
-## Estrutura do projeto
+## 💻 Estrutura do projeto
 
 O projeto está organizado de forma modular, com os arquivos e pastas logicamente separados para facilitar manutenção, escalabilidade e reaproveitamento do código. Essa organização ajuda a manter o código limpo e claro, além de permitir que cada componente seja desenvolvido e testado isoladamente.
 
