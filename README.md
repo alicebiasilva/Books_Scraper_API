@@ -14,7 +14,7 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 ## Índice
 
-- [Funcionalidades e exemplo de uso](#funcionalidades-e-exemplos-de-uso)  
+- [Funcionalidades e exemplo de uso](#funcionalidades-e-exemplo-de-uso)  
 - [Estrutura do projeto](#estrutura-do-projeto)  
 - [Tecnologias](#tecnologias)  
 - [Instalacao e Configuracao](#instalacao-e-configuracao)
