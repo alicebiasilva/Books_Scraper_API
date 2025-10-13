@@ -16,8 +16,8 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 - [Funcionalidades](#funcionalidades)  
 - [Tecnologias](#tecnologias)  
-- [Estrutura do projeto](#estrutura-do-projeto)  
-- [Instalação e Configuração](#instalacao-e-configuracao)  
+- [Estrutura do projeto](#estrutura-projeto)  
+- [Instalação e Configuração](#instalacao-configuracao)
 - [Escalabilidade](#escalabilidade)
 
 ---
