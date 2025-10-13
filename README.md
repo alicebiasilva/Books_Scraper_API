@@ -15,6 +15,7 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 ## Índice
 
 - [Funcionalidades](#funcionalidades)  
+- [Arquitetura do Pipeline de Dados](#arquitetura-do-pipeline-de-dados)
 - [Tecnologias](#tecnologias)  
 - [Estrutura do projeto](#estrutura-do-projeto)  
 - [Instalacao e Configuracao](#instalacao-e-configuracao)
@@ -132,6 +133,14 @@ Buscar por título e/ou categoria juntos:
   "status": "ok"
 }
 ```
+
+---
+
+## 🗺️ Arquitetura do Pipeline de Dados
+
+O diagrama abaixo mostra o fluxo completo de dados — da coleta à entrega — usado neste projeto. Ele ajuda a entender como o sistema foi organizado para permitir extração automatizada, disponibilização via API e uso eficiente pelos times de análise e machine learning.
+
+![Arquitetura do Pipeline](public/drawio/arquitetura_pipeline_dados.png)
 
 ---
 
