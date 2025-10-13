@@ -16,8 +16,8 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 - [Funcionalidades](#funcionalidades)  
 - [Tecnologias](#tecnologias)  
-- [Estrutura do projeto](#estrutura-projeto)  
-- [Instalação e Configuração](#instalacao-configuracao)
+- [Estrutura do projeto](#estrutura-do-projeto)  
+- [Instalação e Configuração](#instalacao-e-configuracao)
 - [Escalabilidade](#escalabilidade)
 
 ---
@@ -159,7 +159,7 @@ Buscar por título e/ou categoria juntos:
 
 ---
  
-## 💻 Estrutura do projeto {#estrutura-do-projeto}
+## Estrutura do projeto
 
 O projeto está organizado de forma modular, com os arquivos e pastas logicamente separados para facilitar manutenção, escalabilidade e reaproveitamento do código. Essa organização ajuda a manter o código limpo e claro, além de permitir que cada componente seja desenvolvido e testado isoladamente.
 
