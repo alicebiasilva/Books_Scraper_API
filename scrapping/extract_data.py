@@ -7,7 +7,7 @@ import re
 BASE_URL = "https://books.toscrape.com/"
 
 # URL base onde as imagens estarão hospedadas publicamente (ex: GitHub Pages)
-IMAGE_BASE_URL = "https://github.com/alicebiasilva/Pos_Tech_Machine_Learning_Engineer/blob/main/public/images"
+IMAGE_BASE_URL = "https://github.com/alicebiasilva/Pos_Tech_Machine_Learning_Engineer/blob/main/public/images/"
 
 def fetch_page(url: str) -> str:
     """
