@@ -122,6 +122,35 @@ Buscar por título e/ou categoria juntos:
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/search?category=Travel
   ```
 
+#### Resposta
+
+```json
+	
+Response body
+Download
+[
+  {
+    "title": "It's Only the Himalayas",
+    "price": 45.17,
+    "availability": "In stock",
+    "rating": "Two",
+    "category": "Travel",
+    "image_path": "https://github.com/alicebiasilva/Pos_Tech_Machine_Learning_Engineer/blob/main/public/images/27a53d0bb95bdd88288eaf66c9230d7e.jpg",
+    "id": 1
+  },
+  {
+    "title": "Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond",
+    "price": 49.43,
+    "availability": "In stock",
+    "rating": "Four",
+    "category": "Travel",
+    "image_path": "https://github.com/alicebiasilva/Pos_Tech_Machine_Learning_Engineer/blob/main/public/images/57770cac1628f4407636635f4b85e88c.jpg",
+    "id": 2
+  },
+  ...
+]
+```
+
 * `GET /health`:Valida saúde da API, ou seja, se as informações estão disponíveis:
 ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/health
