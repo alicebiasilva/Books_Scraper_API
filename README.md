@@ -125,9 +125,6 @@ Buscar por título e/ou categoria juntos:
 #### Resposta
 
 ```json
-	
-Response body
-Download
 [
   {
     "title": "It's Only the Himalayas",
