@@ -30,27 +30,6 @@ def get_books():
     """
     return df_books["title"].tolist()
 
-
-# Detalhes de um livro pelo ID
-@router.get("/books/{book_id}", tags=["Livros"])
-def get_book(book_id: int):
-    """
-    Retorna os detalhes completos de um livro pelo seu ID.
-
-    Parâmetros:
-        book_id (int): ID único do livro a ser buscado.
-
-    Retorna:
-        dict: Dicionário com as informações do livro correspondente.
-
-    Erros:
-        HTTP 404: Se nenhum livro com o ID fornecido for encontrado.
-    """
-    book = df_books[df_books["id"] == book_id]
-    if book.empty:
-        raise HTTPException(status_code=404, detail="Livro não encontrado")
-    return book.to_dict(orient="records")[0]
-
 #Lista detalhes dos livros por titulo e/ou categoria
 @router.get("/books/search", tags=["Categorias"])
 def search_books(title: str | None = Query(None), category: str | None = Query(None)):
@@ -77,6 +56,28 @@ def search_books(title: str | None = Query(None), category: str | None = Query(N
         raise HTTPException(status_code=404, detail="Nenhum livro encontrado com os critérios fornecidos.")
 
     return result.to_dict(orient="records")
+
+
+# Detalhes de um livro pelo ID
+@router.get("/books/{book_id}", tags=["Livros"])
+def get_book(book_id: int):
+    """
+    Retorna os detalhes completos de um livro pelo seu ID.
+
+    Parâmetros:
+        book_id (int): ID único do livro a ser buscado.
+
+    Retorna:
+        dict: Dicionário com as informações do livro correspondente.
+
+    Erros:
+        HTTP 404: Se nenhum livro com o ID fornecido for encontrado.
+    """
+    book = df_books[df_books["id"] == book_id]
+    if book.empty:
+        raise HTTPException(status_code=404, detail="Livro não encontrado")
+    return book.to_dict(orient="records")[0]
+
 
 # Lista todas as categorias
 @router.get("/categories", tags=["Categorias"])
