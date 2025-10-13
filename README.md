@@ -14,15 +14,15 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 ## Índice
 
-- [📚 Funcionalidades](#funcionalidades)  
-- [⚙️ Tecnologias](#Tecnologias)  
-- [💻 Estrutura do projeto](#estrutura-do-projeto)  
-- [🛠️ Instalação e Configuração](#instalacao-e-configuracao)  
-- [🚀 Escalabilidade](#escalabilidade)  
+- [Funcionalidades](#funcionalidades)  
+- [Tecnologias](#tecnologias)  
+- [Estrutura do projeto](#estrutura-do-projeto)  
+- [Instalação e Configuração](#instalacao-e-configuracao)  
+- [Escalabilidade](#escalabilidade)
 
 ---
 
-## 📚 Funcionalidades
+## 📚 Funcionalidades {#funcionalidades}
 
 ### Por que este projeto é ideal para cientistas de dados?
 
@@ -48,7 +48,7 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 
 ### Exemplos de uso
 
-## `GET /books`: 
+### `GET /books`: 
 
 Lista todos os títulos disponíveis.
 
@@ -70,7 +70,7 @@ Lista todos os títulos disponíveis.
 ]
 ```
 
-## `GET /books/{book_id}`: 
+### `GET /books/{book_id}`: 
 
 Busca todas as informações de um livro por ID (exemplo ID = 1).
 
@@ -92,7 +92,7 @@ Busca todas as informações de um livro por ID (exemplo ID = 1).
 }
 ```
 
-## `GET /books/categories`: 
+### `GET /books/categories`: 
 
 Lista todas as categorias disponíveis.
 ```
@@ -113,7 +113,7 @@ Lista todas as categorias disponíveis.
 }
 ```
 
-## `GET /books/search`: 
+### `GET /books/search`: 
 
 Buscar por título e/ou categoria juntos:
 
@@ -125,7 +125,7 @@ Buscar por título e/ou categoria juntos:
 ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/health
   ```
-#### Resposta
+### Resposta
 
 ```json
 {
@@ -135,7 +135,7 @@ Buscar por título e/ou categoria juntos:
 
 ---
 
-## ⚙️ Tecnologias
+## ⚙️ Tecnologias {#tecnologias}
 
 ### Bibliotecas e Ferramentas de Desenvolvimento
 - **FastAPI** – Framework para construir APIs rápidas e escaláveis.
@@ -159,7 +159,7 @@ Buscar por título e/ou categoria juntos:
 
 ---
  
-## 💻 Estrutura do projeto
+## 💻 Estrutura do projeto {#estrutura-do-projeto}
 
 O projeto está organizado de forma modular, com os arquivos e pastas logicamente separados para facilitar manutenção, escalabilidade e reaproveitamento do código. Essa organização ajuda a manter o código limpo e claro, além de permitir que cada componente seja desenvolvido e testado isoladamente.
 
@@ -190,7 +190,7 @@ Essa separação clara e modular facilita o desenvolvimento colaborativo, o test
 
 
 
-## 🛠️ Instalação e Configuração
+## 🛠️ Instalação e Configuração {#instalacao-e-configuracao}
 
 Siga os passos abaixo para clonar, configurar e rodar o projeto localmente:
 
@@ -245,7 +245,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## 🚀 Escalabilidade
+## 🚀 Escalabilidade {#escalabilidade}
 
 ### Próximos passos
 
