@@ -14,8 +14,8 @@ Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
 ## Índice
 
-- [Funcionalidades](#funcionalidades)  
-- [Tecnologias](#tecnologias)  
+- [Funcionalidades](#Funcionalidades)  
+- [Tecnologias](#Tecnologias)  
 - [Estrutura do projeto](#estrutura-do-projeto)  
 - [Instalação e configuração](#instalacao-e-configuracao)  
 - [Escalabilidade](#escalabilidade)  
@@ -48,46 +48,12 @@ Este projeto facilita o trabalho repetitivo e burocrático da coleta e organiza�
 
 ### Exemplos de uso
 
-* Lista todos os títulos:
+* `GET /books`: lista todos os títulos disponíveis.
 
   ```
   https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books
   ```
 
-* Lista todas as categorias:
-
-  ```
-  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/categories
-  ```
-
-* Busca por ID (exemplo ID = 1):
-```
-  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/1
-  ```
-
-* Buscar por título e/ou categoria juntos:
-
-  ```
-  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/search?category=Travel
-  ```
-
-* Valida saúde da API, ou seja, se as informações estão disponíveis:
-```
-  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/health
-  ```
-
-#### Exemplos de Requisições e Respostas
-
-### 🔹 `GET /books`
-
-**Descrição:** Retorna uma lista com os títulos de todos os livros.
-
-#### Exemplo de Requisição
-
-```http
-GET /books HTTP/1.1
-Host: sua-api.vercel.app
-```
 
 #### Resposta
 
@@ -102,18 +68,11 @@ Host: sua-api.vercel.app
 ]
 ```
 
----
+* `GET /books/{book_id}`: busca todas as informações de um livro por ID (exemplo ID = 1).
 
-### 🔹 `GET /books/{book_id}`
-
-**Descrição:** Retorna os detalhes completos de um livro pelo seu ID.
-
-#### Exemplo de Requisição
-
-```http
-GET /books/1 HTTP/1.1
-Host: sua-api.vercel.app
-```
+  ```
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/1
+  ```
 
 #### Resposta
 
@@ -129,48 +88,10 @@ Host: sua-api.vercel.app
 }
 ```
 
----
-
-### 🔹 `GET /books/search`
-
-**Descrição:** Busca livros por título, categoria ou ambos.
-
-#### Exemplo de Requisição (por título e categoria)
-
-```http
-GET /books/search?title=himalayas&category=Travel HTTP/1.1
-Host: sua-api.vercel.app
+* `GET /books/categories`: lista todas as categorias disponíveis.
 ```
-
-#### Resposta
-
-```json
-[
-  {
-    "id": 1,
-    "title": "It's Only the Himalayas",
-    "price": 45.17,
-    "availability": "In stock",
-    "rating": "Two",
-    "category": "Travel",
-    "image_path": "https://alicebiasilva.github.io/Pos_Tech_Machine_Learning_Engineer/public/images/27a53d0bb95bdd88288eaf66c9230d7e.jpg"
-  }
-]
-```
-
----
-
-### 🔹 `GET /categories`
-
-**Descrição:** Retorna todas as categorias disponíveis.
-
-#### Exemplo de Requisição
-
-```http
-GET /categories HTTP/1.1
-Host: sua-api.vercel.app
-```
-
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/categories
+  ```
 #### Resposta
 
 ```json
@@ -186,19 +107,16 @@ Host: sua-api.vercel.app
 }
 ```
 
----
+* `GET /books/search`: Buscar por título e/ou categoria juntos:
 
-### 🔹 `GET /health`
+  ```
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/books/search?category=Travel
+  ```
 
-**Descrição:** Verifica se a API e o arquivo de dados estão funcionando corretamente.
-
-#### Exemplo de Requisição
-
-```http
-GET /health HTTP/1.1
-Host: sua-api.vercel.app
+* `GET /health`:Valida saúde da API, ou seja, se as informações estão disponíveis:
 ```
-
+  https://pos-tech-machine-learning-engineer.vercel.app/api/v1/health
+  ```
 #### Resposta
 
 ```json
@@ -244,28 +162,24 @@ O projeto está organizado de forma modular, com os arquivos e pastas logicament
 
 Essa separação clara e modular facilita o desenvolvimento colaborativo, o teste, a manutenção e a expansão futura do projeto.
 
-.
-├── api
-│   ├── data
-│   │   └── books.csv           # Arquivo CSV contendo os dados coletados dos livros
-│   ├── routes.py               # Definição das rotas da API para consulta dos dados
-│   ├── config.py               # Configurações gerais da aplicação (ex: chave secreta, cache)
-│   └── __init__.py             # Torna a pasta um pacote Python
 
-├── public
-│   └── images                  # Diretório onde as imagens dos livros são armazenadas após o download
+| Caminho                          | Descrição                                                                 |
+|----------------------------------|---------------------------------------------------------------------------|
+| `api/data/books.csv`            | Arquivo CSV contendo os dados coletados dos livros                       |
+| `api/routes.py`                 | Definição das rotas da API para consulta dos dados                       |
+| `api/config.py`                 | Configurações gerais da aplicação (ex: chave secreta, cache)             |
+| `api/__init__.py`              | Torna a pasta `api` um pacote Python                                     |
+| `public/images/`               | Diretório onde as imagens dos livros são armazenadas após o download     |
+| `scrapping/extract_data.py`    | Funções responsáveis pelo scraping dos dados do site                     |
+| `scrapping/load_data.py`       | Funções para salvar os dados coletados em CSV                            |
+| `scrapping/scrape_and_save.py` | Script que integra scraping e armazenamento dos dados                    |
+| `scrapping/__init__.py`        | Torna a pasta `scrapping` um pacote Python                               |
+| `main.py`                      | Script principal que inicia o scraping e roda a API                      |
+| `requirements.txt`             | Lista das dependências Python necessárias para o projeto                 |
+| `vercel.json`                  | Configurações para deploy no Vercel                                      |
+| `.gitignore`                   | Arquivos e pastas ignorados pelo Git                                     |
+| `README.md`                    | Documentação do projeto                                                  |
 
-├── scrapping
-│   ├── extract_data.py         # Funções responsáveis pelo scraping dos dados do site
-│   ├── load_data.py            # Funções para salvar os dados coletados em CSV
-│   ├── scrape_and_save.py      # Script que integra scraping e armazenamento dos dados
-│   └── __init__.py             # Torna a pasta um pacote Python
-
-├── main.py                     # Script principal que inicia o scraping e roda a API
-├── requirements.txt            # Lista das dependências Python necessárias para o projeto
-├── vercel.json                 # Configurações para deploy no Vercel
-├── .gitignore                  # Arquivos e pastas ignorados pelo Git
-└── README.md                   # Documentação do projeto
 
 
 ## 🛠️ Instalação e Configuração
@@ -343,25 +257,19 @@ Estamos abertos a feedbacks e já mapeamos algumas melhorias para as próximas e
 
 #### Banco de Dados em Nuvem
 
-* Integrar a persistência dos dados com um **banco de dados relacional** (PostgreSQL, MySQL) ou **NoSQL** (MongoDB), hospedado em plataformas como:
-
-  * Railway
-  * PlanetScale
-  * Supabase
-  * Firebase
-* Isso permitirá maior escalabilidade, consultas mais complexas e integração com dashboards.
+* Integrar a persistência dos dados com um banco de dados relacional (PostgreSQL, MySQL) ou NoSQL (MongoDB). Isso permitirá maior escalabilidade, consultas mais complexas e integração com dashboards.
 
 #### Painéis e Visualização
 
-* Criar um **dashboard interativo** (ex: Streamlit, Dash ou Power BI conectado via API) para visualização rápida dos livros, categorias e preços.
+* Criar um dashboard interativo (ex: Streamlit, Dash ou Power BI conectado via API) para visualização rápida dos livros, categorias e preços.
 * Integrar com ferramentas de visual analytics para insights mais profundos.
 
 #### Testes Automatizados
 
-* Criar **testes unitários e de integração** com `pytest`.
+* Criar testes unitários e de integração com `pytest`.
 * Configurar CI/CD no GitHub para rodar os testes automaticamente a cada push.
 
 #### Versionamento Semântico
 
-* Adotar **versionamento semântico** (`semver`) para releases (`v1.0.0`, `v1.1.0` etc).
+* Adotar versionamento semântico (`semver`) para releases (`v1.0.0`, `v1.1.0` etc).
 * Manter changelog atualizado no GitHub.
