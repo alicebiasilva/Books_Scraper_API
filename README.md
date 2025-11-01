@@ -10,6 +10,8 @@ Autora: Alice Beatriz da Silva
 
 Disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
 
+Para efeitos de avaliação do projeto:
+Prompt Design in Vertex AI Skill Badge: https://www.credly.com/badges/63f96b75-37e4-4db6-a2e3-fb341c03325e/linked_in?t=t3kzf2
 ---
 
 ## Índice
