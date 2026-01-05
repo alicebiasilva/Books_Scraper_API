@@ -9,6 +9,7 @@ Autora: Alice Beatriz da Silva
 Última atualização: 12/10/2025
 
 Deploy disponível em: https://pos-tech-machine-learning-engineer-eta.vercel.app/
+
 Apresentação em vídeo em: https://www.youtube.com/watch?v=3yWDTAuKlL8
 
 Para efeitos de avaliação do projeto:
